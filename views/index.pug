@@ -3,4 +3,16 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}, pug is a template engines
-  button(type = "button", class="btn btn-info") Press Me
+  button(type = "button", class="btn btn-info", onclick = "goFaster()") Press Me
+  br
+  div#faster Increase the speed
+  script.
+    var mph = 20;
+    var change = 1;
+    
+    function goFaster() {
+      mph = mph + change;
+      change = change + 1;
+      var div = document.getElementById('faster');
+      div.innerHTML = "MPH: " + mph + " change: " + change;
+    }
