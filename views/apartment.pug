@@ -1,4 +1,14 @@
 extends layout
 
 block content
+  div.container-fluid
   h1= title
+  - let results = [ { Apartment_name: "Parkway", location: "7th street", rent: 800 }, { Apartment_name: "villageO", location: "6th street", rent: 900 },{ Apartment_name: "forest-cove", location: "5th street", rent: 850 } ]
+  
+  div.row 
+    each attr in results
+      div.col-sm-2
+        h3 #{attr.Apartment_name}
+        h4 #{attr.location}
+        p #{attr.rent}
+      
